@@ -15,12 +15,26 @@ int main()
 		cout << "Enter your range [from, to] \n";
 		cin >> begin >> end;
 	} while (begin >= end || begin < 2 || end < 0);
-
+	
 	// TODO: iterate through each number in the range [begin..end]
-	// TODO: check if n is prime by testing divisibility from 2 up to n-1
-	// TODO: if n is divisible by i, it is not prime
-	// TODO: if n is prime, print it
-
+	for (int n = begin; n <= end; n++)
+	{
+		// TODO: check if n is prime by testing divisibility from 2 up to n-1
+		bool isPrime = true;
+		for (int i = 2; i < n; i++)
+		{
+			if (n % i == 0)
+			{
+				isPrime = false;
+				break;
+			}
+		}
+		// TODO: if n is prime, print it
+		if (isPrime)
+		{
+			cout << n << " ";
+		}
+	}
 	cout << endl;
 
 	return 0;
